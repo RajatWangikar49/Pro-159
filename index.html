@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <script src = "https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src = "https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+        <script src = "Highlight.js"></script>
+        <script src = "Info.js"></script>
+        <script src = "Poster.js"></script>
+
+    </head>
+
+    <body>
+
+        <a-scene id = "scene" background = "color : #65738a">
+
+            <a-plane
+            id = "ground"
+            width = "200"
+            height = "100"
+            color = "#78909c"
+            rotation = "-90 0 0"></a-plane>
+
+            <a-entity id = "posters-container" comics-poster></a-entity>
+
+            <a-camera id = "camera" wasd-controls = "enabled : false" position = " 0 10 20">
+
+                <a-entity
+                id = "camera-cursor"
+                cursor
+                geometry = "primitive : ring; radiusInner : 0.06; radiusOuter : 0.08"
+                position = "0 0 -3"
+                material = "color : black; shader : flat"></a-entity>
+
+                <a-entity
+                id = "app-title"
+                position = "0 0.75 -1"
+                text = "font : exo2bold; align : center; width : 2; color : #000; value : Virtual Comics Store !"></a-entity>
+
+                <a-entity
+                id = "app-subtitle"
+                position = "0 0.65 -1"
+                text = "font : exo2bold; align : center; width : 1; color : #000; value : Get your favourite comics"></a-entity>
+
+                <a-entity
+                id = "fade-background"
+                geometry = "primitive : sphere; radius : 2.5"
+                material = "color : #000; transparent : true; shader : flat; side : back; opacity : 0.7"
+                cursor-listener
+                visible = "false"></a-entity>
+
+            </a-camera>
+
+        </a-scene>
+
+    </body>
+
+</html>
